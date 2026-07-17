@@ -44,7 +44,10 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 0 1rem;
 }
+
+/* ----- CARD COMPONENT ----- */
 
 .card {
   background-color: var(--white);
@@ -63,6 +66,8 @@ main {
 
 .card__image {
   border-radius: 12px;
+  width: 100%;
+  height: auto;
 }
 
 .card__body {
@@ -111,6 +116,30 @@ main {
 .card__author {
   font-weight: 800;
   font-size: 0.9rem;
+}
+
+.card__author-link {
+  color: inherit;
+  position: relative;
+  text-decoration: none;
+}
+
+.card__author-link::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  bottom: -2.5px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--yellow);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease-out;
+}
+
+.card__author-link:hover::after {
+  transform: scaleX(1);
 }
 
 .attribution {
